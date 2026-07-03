@@ -804,6 +804,58 @@ section {
   margin: 0.2rem 0 0.5rem;
 }
 
+/* ─── Extra-Curricular Activities ─────────────────────────── */
+.extracurricular {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.activity-section-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 0.4rem;
+}
+
+.activity-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.55rem 0.75rem;
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+  border-left: 2px solid rgba(74, 116, 185, 0.15);
+  border-radius: 0 4px 4px 0;
+  transition: border-left-color var(--transition-time) ease,
+              transform var(--transition-time) ease,
+              background-color var(--transition-time) ease;
+}
+
+.activity-item:hover {
+  border-left-color: var(--accent-color);
+  transform: translateX(var(--animation-offset));
+  background-color: var(--surface-color);
+}
+
+.activity-role {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-color);
+  white-space: nowrap;
+}
+
+.activity-sep {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  flex-shrink: 0;
+}
+
+.activity-org {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
 /* ─── IELTS Card ──────────────────────────────────────────── */
 .ielts-card {
   display: flex;
