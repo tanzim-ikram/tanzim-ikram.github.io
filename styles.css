@@ -69,6 +69,11 @@ h1 {
   margin: 0 0 0.2rem;
   letter-spacing: -0.025em;
   color: var(--text-color);
+  transition: color var(--transition-time) ease;
+}
+
+h1:hover {
+  color: var(--accent-color);
 }
 
 /* Modern minimal section headings: uppercase label + rule */
@@ -351,14 +356,14 @@ section {
   border-radius: 8px;
   display: flex;
   gap: 1.1rem;
-  transition: all var(--transition-time) ease;
+  transition: transform var(--transition-time) ease, border-color var(--transition-time) ease, box-shadow var(--transition-time) ease;
   background: var(--bg-color);
 }
 
 .publication-item:hover {
   border-color: rgba(14, 165, 233, 0.35);
   box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  transform: translateX(var(--animation-offset));
 }
 
 .pub-thumbnail {
@@ -484,14 +489,14 @@ section {
   border-bottom: 1px solid var(--border-light);
   border-radius: 6px;
   border: 1px solid transparent;
-  transition: all var(--transition-time) ease;
+  transition: transform var(--transition-time) ease, background-color var(--transition-time) ease, border-color var(--transition-time) ease, box-shadow var(--transition-time) ease;
 }
 
 .award-item:hover {
   background-color: var(--surface-color);
   border-color: var(--border-light);
   box-shadow: var(--shadow-sm);
-  transform: translateY(-1.5px);
+  transform: translateX(var(--animation-offset));
 }
 
 .award-year {
@@ -563,7 +568,7 @@ section {
 
 /* ─── News ────────────────────────────────────────────────── */
 .news-container {
-  max-height: 290px;
+  max-height: 300px;
   overflow-y: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -576,31 +581,20 @@ section {
 .news-list {
   padding-left: 0;
   list-style-type: none;
-  margin: 0;
+  margin: 0.5rem 0;
 }
 
 .news-list li {
-  margin-bottom: 0.75rem;
-  padding: 0.6rem 0.75rem 0.6rem 0.9rem;
-  margin-left: -0.75rem;
-  margin-right: -0.75rem;
-  border-left: 2px solid var(--border-color);
-  border-radius: 0 8px 8px 0;
-  font-size: 0.88rem;
-  line-height: 1.7;
-  transform: translateX(0);
-  transition: transform 250ms ease-in-out,
-              border-left-color 250ms ease-in-out,
-              background-color 250ms ease-in-out,
-              box-shadow 250ms ease-in-out;
-  will-change: transform;
+  margin-bottom: 0.9rem;
+  padding-left: 0.9rem;
+  border-left: 2px solid rgba(74, 116, 185, 0.2);
+  padding-bottom: 0.7rem;
+  transition: transform var(--transition-time) ease, border-left-color var(--transition-time) ease;
 }
 
 .news-list li:hover {
   border-left-color: var(--accent-color);
-  background-color: var(--surface-color);
-  transform: translateX(6px);
-  box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.06);
+  transform: translateX(var(--animation-offset));
 }
 
 /* ─── Skills / chip tags ──────────────────────────────────── */
@@ -611,14 +605,14 @@ section {
   margin-right: -0.75rem;
   border-radius: 8px;
   border: 1px solid transparent;
-  transition: all var(--transition-time) ease;
+  transition: transform var(--transition-time) ease, background-color var(--transition-time) ease, border-color var(--transition-time) ease, box-shadow var(--transition-time) ease;
 }
 
 .service-category:hover {
   background-color: var(--surface-color);
   border-color: var(--border-light);
   box-shadow: var(--shadow-sm);
-  transform: translateY(-2px);
+  transform: translateX(var(--animation-offset));
 }
 
 .service-category:hover .service-title {
@@ -736,7 +730,7 @@ section {
   background-color: var(--surface-color);
   border-color: var(--border-color);
   box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  transform: translateX(var(--animation-offset));
 }
 
 .exp-item:hover .exp-title-row strong {
@@ -791,14 +785,14 @@ section {
   margin-right: -0.75rem;
   border-radius: 8px;
   border: 1px solid transparent;
-  transition: all var(--transition-time) ease;
+  transition: transform var(--transition-time) ease, background-color var(--transition-time) ease, border-color var(--transition-time) ease, box-shadow var(--transition-time) ease;
 }
 
 .misc-item:hover {
   background-color: var(--surface-color);
   border-color: var(--border-color);
   box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  transform: translateX(var(--animation-offset));
 }
 
 .misc-item:hover strong {
