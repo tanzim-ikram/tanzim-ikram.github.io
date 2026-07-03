@@ -332,6 +332,91 @@ section {
   margin: 0.25rem 0 0.75rem;
 }
 
+/* Education section */
+.edu-item {
+  margin-bottom: 1.5rem;
+}
+
+.edu-header {
+  margin-bottom: 0.5rem;
+}
+
+.edu-degree {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.edu-status {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.edu-institution {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.edu-location {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* Work Experience section */
+.exp-item {
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+  transition: transform var(--transition-time) ease;
+}
+
+.exp-item:last-child {
+  border-bottom: none;
+}
+
+.exp-item:hover {
+  transform: translateX(var(--animation-offset));
+}
+
+.exp-header {
+  margin-bottom: 0.5rem;
+}
+
+.exp-role {
+  font-size: 1rem;
+  margin-bottom: 0.15rem;
+}
+
+.exp-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  align-items: baseline;
+}
+
+.exp-org {
+  font-style: italic;
+}
+
+.exp-period {
+  font-style: italic;
+}
+
+.exp-location::before {
+  content: "·";
+  margin-right: 0.5rem;
+  opacity: 0.5;
+}
+
 /* Footer */
 footer {
   margin-top: 2.5rem;
@@ -449,7 +534,7 @@ strong {
   /* Disable right-moving hover animations on mobile */
   .publication-item:hover, .award-item:hover, 
   .service-category:hover, .misc-item:hover, .news-list li:hover,
-  nav a:hover, .social-links-header a:hover, .pub-links a:hover {
+  .exp-item:hover, nav a:hover, .social-links-header a:hover, .pub-links a:hover {
     transform: none !important;
   }
 }

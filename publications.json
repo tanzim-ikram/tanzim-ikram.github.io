@@ -1,53 +1,84 @@
 {
   "publications": [
     {
-      "title": "[Paper Title 1]",
+      "title": "Integrating Therapy and Technology: An Exploratory Case Study on the Development of Aids for Dementia in Bangladesh",
       "authors": [
-        "Author 1*",
-        "Author 2*",
-        "Author 3",
-        "Author 4",
-        "Author 5",
-        "Author 6",
-        "Author 7",
-        "Author 8",
-        "Author 9",
-        "Author 10",
-        "Author 11†",
-        "Author 12†"
+        "T. I. Sheikh",
+        "M. R. Al Sultan",
+        "F. Ahmed",
+        "M. M. Iqra",
+        "K. T. Hasan"
       ],
-      "venue": "Preprint (2025)",
-      "thumbnail": "images/thumbs/1.jpg",
+      "venue": "HCII 2026, Lecture Notes in Computer Science (LNCS), 2026",
+      "thumbnail": "images/demo.jpg",
       "selected": 1,
-      "award": "",
-      "links": {
-        "pdf": "#",
-        "code": "#",
-        "project": "#"
-      }
+      "award": "Accepted — Awaiting Publication",
+      "links": {}
     },
     {
-      "title": "[Paper Title 2]",
+      "title": "ReedMap: A Tangible Interaction System for Context-Aware and Division-Based Map Navigation",
       "authors": [
-        "Author 1*",
-        "Author 2*",
-        "Author 3",
-        "Author 4",
-        "Author 5",
-        "Author 6",
-        "Author 7",
-        "Author 8",
-        "Author 9",
-        "Author 10",
-        "Author 11"
+        "S. M. Rohan",
+        "T. I. Sheikh",
+        "F. B. Zaman",
+        "M. Ahmed",
+        "M. S. Kabir",
+        "K. T. Hasan"
       ],
-      "venue": "Preprint (2025)",
-      "thumbnail": "images/thumbs/2.jpg",
+      "venue": "HCII 2026, Lecture Notes in Computer Science (LNCS), 2026",
+      "thumbnail": "images/demo.jpg",
+      "selected": 1,
+      "award": "Accepted — Awaiting Publication",
+      "links": {}
+    },
+    {
+      "title": "AirTune: A Tangible Interaction System for Gesture-Based and Contact-less Media Control",
+      "authors": [
+        "T. I. Sheikh",
+        "S. M. Rohan",
+        "N. Aziz",
+        "A. Amin",
+        "S. F. Mahbub",
+        "K. T. Hasan"
+      ],
+      "venue": "HCII 2026, Lecture Notes in Computer Science (LNCS), 2026",
+      "thumbnail": "images/demo.jpg",
+      "selected": 1,
+      "award": "Accepted — Awaiting Publication",
+      "links": {}
+    },
+    {
+      "title": "GlobeStick: Innovating Map Navigation Through Tactile Interaction and User-Centered Design",
+      "authors": [
+        "K. Redwan",
+        "M. Ahmed",
+        "T. I. Sheikh",
+        "K. M. S. Hasan",
+        "M. F. A. Al Sohan",
+        "K. T. Hasan"
+      ],
+      "venue": "DUXU 2025 (HCII), Lecture Notes in Computer Science (LNCS), 15798, 2025",
+      "thumbnail": "images/demo.jpg",
+      "selected": 1,
+      "award": "",
+      "links": {}
+    },
+    {
+      "title": "Melanoma Detection Using Augmented ResNet34 for High-Precision Dermoscopic Image Classification",
+      "authors": [
+        "M. Ahmed",
+        "A. Sultana",
+        "P. B. Pew",
+        "S. Datto",
+        "T. I. Sheikh",
+        "K. Redwan",
+        "M. F. A. Al Sohan"
+      ],
+      "venue": "ICCIES 2025, Lecture Notes in Networks and Systems (LNNS), 2025",
+      "thumbnail": "images/demo.jpg",
       "selected": 0,
       "award": "",
-      "links": {
-        "pdf": "#"
-      }
+      "links": {}
     }
   ]
 }
