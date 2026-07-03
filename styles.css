@@ -836,32 +836,6 @@ section {
   min-width: 120px;
 }
 
-.ielts-title {
-  font-weight: 600;
-  font-size: 0.88rem;
-  color: var(--text-color);
-}
-
-.ielts-score-row {
-  display: flex;
-  align-items: baseline;
-  gap: 0.4rem;
-}
-
-.ielts-overall {
-  font-size: 1.6rem;
-  font-weight: 300;
-  color: var(--accent-color);
-  letter-spacing: -0.02em;
-  line-height: 1;
-}
-
-.ielts-cefr {
-  font-size: 0.78rem;
-  color: var(--text-secondary);
-  font-style: italic;
-}
-
 .ielts-divider {
   width: 1px;
   align-self: stretch;
@@ -872,7 +846,7 @@ section {
 .ielts-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  flex: 1;
+  flex: 1.5;
 }
 
 .ielts-subscore {
