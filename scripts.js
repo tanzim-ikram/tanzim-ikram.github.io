@@ -18,6 +18,9 @@ document.addEventListener('DOMContentLoaded', function() {
   if (toggleButton) {
     toggleButton.addEventListener('click', togglePublications);
   }
+
+  // Initialize scrollspy for navigation effects
+  initScrollspy();
 });
 
 // Load publications from JSON file
@@ -200,4 +203,61 @@ window.onclick = function(event) {
   if (event.target == modal) {
     closeModal();
   }
+}
+
+// Scrollspy and dynamic navigation effects
+function initScrollspy() {
+  const nav = document.querySelector('nav.side-nav');
+  if (!nav) return;
+  
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('nav.side-nav a');
+  
+  function onScroll() {
+    // Show nav only when scrolled down
+    if (window.scrollY > 150) {
+      nav.classList.add('visible');
+    } else {
+      nav.classList.remove('visible');
+    }
+    
+    // Find current section
+    let currentId = '';
+    
+    // Check if we are at the bottom of the page
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
+      currentId = sections[sections.length - 1].getAttribute('id');
+    } else {
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (window.scrollY >= sectionTop - 200) {
+          currentId = section.getAttribute('id');
+        }
+      });
+    }
+    
+    if (!currentId && sections.length > 0) {
+      currentId = sections[0].getAttribute('id');
+    }
+
+    let foundActive = false;
+    navLinks.forEach(link => {
+      link.classList.remove('active', 'past', 'future');
+      
+      const href = link.getAttribute('href').substring(1);
+      
+      if (href === currentId) {
+        link.classList.add('active');
+        foundActive = true;
+      } else if (!foundActive) {
+        link.classList.add('past');
+      } else {
+        link.classList.add('future');
+      }
+    });
+  }
+  
+  window.addEventListener('scroll', onScroll, { passive: true });
+  // Call once to set initial state
+  onScroll();
 }
