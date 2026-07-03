@@ -766,6 +766,19 @@ section {
   color: var(--accent-color);
 }
 
+.exp-project {
+  margin-top: 0.75rem;
+}
+
+.exp-project-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent-color);
+  margin-bottom: 0.35rem;
+}
+
 .exp-location {
   font-size: 0.82rem;
   color: var(--text-secondary);
