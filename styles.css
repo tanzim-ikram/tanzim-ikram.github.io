@@ -146,11 +146,32 @@ nav.side-nav.visible {
   transform: translateY(0);
 }
 
+.hamburger-menu {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.nav-brand {
+  display: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-color);
+  letter-spacing: 0.01em;
+}
+
 /* Horizontal sticky nav bar for screens under 1140px */
 @media (max-width: 1139px) {
   nav.side-nav {
     position: sticky;
     top: 0;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
     background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -1029,8 +1050,69 @@ footer {
 
 /* ─── Responsive ──────────────────────────────────────────── */
 @media (max-width: 768px) {
+  nav.side-nav {
+    /* Reset values inherited from 1139px block */
+    width: 100vw;
+    margin-left: calc(-1 * (100vw - 100%) / 2);
+    margin-right: calc(-1 * (100vw - 100%) / 2);
+    padding: 0.6rem 1.25rem;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    display: flex;
+  }
+
+  .hamburger-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 6px;
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+  }
+
+  .nav-brand {
+    display: block;
+  }
+
+  nav.side-nav ul {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    padding: 0.5rem 0 0.25rem;
+    gap: 0.25rem;
+    list-style: none;
+    margin: 0;
+  }
+
+  nav.side-nav.menu-open ul {
+    display: flex;
+  }
+
+  nav.side-nav a {
+    display: block;
+    text-align: left;
+    padding: 0.65rem 0.75rem;
+    font-size: 0.9rem;
+    background: none;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  nav.side-nav a:hover {
+    background: var(--surface-color);
+  }
+
   body {
-    padding: 1.5rem 1.1rem;
+    padding: 1.5rem 1.4rem;
   }
 
   header {
@@ -1041,10 +1123,6 @@ footer {
   }
 
   .social-links-header {
-    justify-content: center;
-  }
-
-  nav ul {
     justify-content: center;
   }
 

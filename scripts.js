@@ -21,7 +21,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Initialize scrollspy for navigation effects
   initScrollspy();
+  
+  // Initialize mobile menu
+  initMobileMenu();
 });
+
+// Initialize mobile menu toggle functionality
+function initMobileMenu() {
+  const hamburger = document.querySelector('.hamburger-menu');
+  const nav = document.querySelector('.side-nav');
+  const navLinks = document.querySelectorAll('.side-nav a');
+
+  if (hamburger && nav) {
+    hamburger.addEventListener('click', () => {
+      nav.classList.toggle('menu-open');
+      const isExpanded = nav.classList.contains('menu-open');
+      hamburger.setAttribute('aria-expanded', isExpanded);
+    });
+
+    // Close menu when a link is clicked
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('menu-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+}
 
 // Load publications from JSON file
 function loadPublications() {
