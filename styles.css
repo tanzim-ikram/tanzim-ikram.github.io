@@ -455,19 +455,16 @@ section {
   display: flex;
   align-items: baseline;
   gap: 1rem;
-  padding: 0.55rem 0.75rem;
+  padding: 0.55rem 0.75rem 0.55rem 0.9rem;
   margin-left: -0.75rem;
   margin-right: -0.75rem;
-  border-bottom: 1px solid var(--border-light);
-  border-radius: 6px;
-  border: 1px solid transparent;
-  transition: transform var(--transition-time) ease, background-color var(--transition-time) ease, border-color var(--transition-time) ease, box-shadow var(--transition-time) ease;
+  border-left: 2px solid rgba(74, 116, 185, 0.2);
+  border-radius: 0 4px 4px 0;
+  transition: transform var(--transition-time) ease, border-left-color var(--transition-time) ease;
 }
 
 .award-item:hover {
-  background-color: var(--surface-color);
-  border-color: var(--border-light);
-  box-shadow: var(--shadow-sm);
+  border-left-color: var(--accent-color);
   transform: translateX(var(--animation-offset));
 }
 
