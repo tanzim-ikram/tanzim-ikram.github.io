@@ -261,3 +261,18 @@ function initScrollspy() {
   // Call once to set initial state
   onScroll();
 }
+
+// Back to Top Button functionality
+document.addEventListener('DOMContentLoaded', () => {
+  const backToTopButton = document.getElementById('back-to-top');
+  
+  if (backToTopButton) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopButton.classList.add('visible');
+      } else {
+        backToTopButton.classList.remove('visible');
+      }
+    }, { passive: true });
+  }
+});
