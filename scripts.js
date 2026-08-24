@@ -24,6 +24,9 @@ document.addEventListener('DOMContentLoaded', function () {
   
   // Initialize mobile menu
   initMobileMenu();
+
+  // Initialize collapsible experience detail toggles
+  initExpToggles();
 });
 
 // Initialize mobile menu toggle functionality
@@ -47,6 +50,27 @@ function initMobileMenu() {
       });
     });
   }
+}
+
+// Initialize collapsible experience detail toggles
+function initExpToggles() {
+  document.querySelectorAll('button.exp-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('aria-controls');
+      const details = document.getElementById(targetId);
+      if (!details) return;
+
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+      if (isExpanded) {
+        details.hidden = true;
+        btn.setAttribute('aria-expanded', 'false');
+      } else {
+        details.hidden = false;
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
 }
 
 // Load publications from JSON file

@@ -776,6 +776,64 @@ section {
   margin-bottom: 0.35rem;
 }
 
+/* ─── Collapsible experience details ─────────────────────── */
+button.exp-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  width: 100%;
+  text-align: left;
+  border-radius: 4px;
+  transition: color var(--transition-time) ease;
+}
+
+button.exp-toggle:hover {
+  color: var(--accent-hover);
+}
+
+button.exp-toggle:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.exp-chevron {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(-45deg);
+  transition: transform var(--transition-time) ease;
+  flex-shrink: 0;
+  margin-left: auto;
+  margin-right: 0.1rem;
+}
+
+button.exp-toggle[aria-expanded="true"] .exp-chevron {
+  transform: rotate(45deg);
+}
+
+.exp-details {
+  overflow: hidden;
+  animation: expandDetails 0.25s ease-out both;
+}
+
+@keyframes expandDetails {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .exp-location {
   font-size: 0.82rem;
   color: var(--text-secondary);
