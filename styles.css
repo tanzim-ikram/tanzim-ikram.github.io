@@ -298,6 +298,7 @@ nav a.active {
     opacity: 0;
     transform: translateY(14px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -874,6 +875,7 @@ button.exp-toggle[aria-expanded="true"] .exp-chevron {
     opacity: 0;
     transform: translateY(-4px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -893,6 +895,22 @@ button.exp-toggle[aria-expanded="true"] .exp-chevron {
   margin-right: -0.75rem;
   border-radius: 8px;
   border: 1px solid transparent;
+}
+
+/* Hover effect kept for Projects cards */
+#projects .misc-item {
+  transition: transform var(--transition-time) ease, background-color var(--transition-time) ease, border-color var(--transition-time) ease, box-shadow var(--transition-time) ease;
+}
+
+#projects .misc-item:hover {
+  background-color: var(--surface-color);
+  border-color: var(--border-color);
+  box-shadow: var(--shadow-md);
+  transform: translateX(var(--animation-offset));
+}
+
+#projects .misc-item:hover strong {
+  color: var(--accent-hover);
 }
 
 .misc-item p,
@@ -926,8 +944,8 @@ button.exp-toggle[aria-expanded="true"] .exp-chevron {
   border-left: 2px solid rgba(74, 116, 185, 0.15);
   border-radius: 0 4px 4px 0;
   transition: border-left-color var(--transition-time) ease,
-              transform var(--transition-time) ease,
-              background-color var(--transition-time) ease;
+    transform var(--transition-time) ease,
+    background-color var(--transition-time) ease;
 }
 
 .activity-item:hover {
@@ -1023,20 +1041,24 @@ button.exp-toggle[aria-expanded="true"] .exp-chevron {
     align-items: flex-start;
     gap: 0.75rem;
   }
+
   .ielts-divider {
     width: 100%;
     height: 1px;
     align-self: auto;
   }
+
   .ielts-grid {
     grid-template-columns: 1fr 1fr;
     width: 100%;
   }
+
   .ielts-subscore {
     padding: 0.3rem 0.5rem;
     border-right: none;
     border-bottom: 1px solid var(--border-light);
   }
+
   .ielts-subscore:nth-child(3),
   .ielts-subscore:nth-child(4) {
     border-bottom: none;
