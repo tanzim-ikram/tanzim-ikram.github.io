@@ -27,28 +27,6 @@ body {
   background-color: var(--bg-color);
   font-weight: 300;
   font-size: 0.935rem;
-  /* Dot grid texture */
-  background-image: radial-gradient(var(--border-light) 1px, transparent 1px);
-  background-size: 24px 24px;
-  background-attachment: local;
-}
-
-/* Ambient glow — fixed to viewport so it doesn't scroll */
-body::before {
-  content: '';
-  position: fixed;
-  top: -20%;
-  right: -15%;
-  width: 55vw;
-  height: 55vw;
-  background: radial-gradient(ellipse at center, rgba(14, 165, 233, 0.055) 0%, transparent 65%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-main, header, nav {
-  position: relative;
-  z-index: 1;
 }
 
 /* ─── Header ──────────────────────────────────────────────── */
