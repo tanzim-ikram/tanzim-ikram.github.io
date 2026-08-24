@@ -596,18 +596,6 @@ section {
   margin-right: -0.75rem;
   border-radius: 8px;
   border: 1px solid transparent;
-  transition: transform var(--transition-time) ease, background-color var(--transition-time) ease, border-color var(--transition-time) ease, box-shadow var(--transition-time) ease;
-}
-
-.service-category:hover {
-  background-color: var(--surface-color);
-  border-color: var(--border-light);
-  box-shadow: var(--shadow-sm);
-  transform: translateX(var(--animation-offset));
-}
-
-.service-category:hover .service-title {
-  color: var(--accent-hover);
 }
 
 .service-title {
@@ -654,18 +642,6 @@ section {
   margin-right: -0.75rem;
   border-radius: 8px;
   border: 1px solid transparent;
-  transition: all var(--transition-time) ease;
-}
-
-.edu-item:hover {
-  background-color: var(--surface-color);
-  border-color: var(--border-color);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
-}
-
-.edu-item:hover .edu-degree strong {
-  color: var(--accent-hover);
 }
 
 .edu-header {
@@ -709,23 +685,11 @@ section {
   border-bottom: 1px solid var(--border-light);
   border-radius: 8px;
   border: 1px solid transparent;
-  transition: all var(--transition-time) ease;
 }
 
 .exp-item:last-child {
   border-bottom: none;
   margin-bottom: 0;
-}
-
-.exp-item:hover {
-  background-color: var(--surface-color);
-  border-color: var(--border-color);
-  box-shadow: var(--shadow-md);
-  transform: translateX(var(--animation-offset));
-}
-
-.exp-item:hover .exp-title-row strong {
-  color: var(--accent-hover);
 }
 
 .exp-header {
@@ -847,18 +811,6 @@ button.exp-toggle[aria-expanded="true"] .exp-chevron {
   margin-right: -0.75rem;
   border-radius: 8px;
   border: 1px solid transparent;
-  transition: transform var(--transition-time) ease, background-color var(--transition-time) ease, border-color var(--transition-time) ease, box-shadow var(--transition-time) ease;
-}
-
-.misc-item:hover {
-  background-color: var(--surface-color);
-  border-color: var(--border-color);
-  box-shadow: var(--shadow-md);
-  transform: translateX(var(--animation-offset));
-}
-
-.misc-item:hover strong {
-  color: var(--accent-hover);
 }
 
 .misc-item p,
@@ -874,10 +826,12 @@ button.exp-toggle[aria-expanded="true"] .exp-chevron {
 }
 
 .activity-section-title {
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: var(--text-color);
-  margin-bottom: 0.4rem;
+  margin-top: 1.6rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
 }
 
 .activity-item {
@@ -929,17 +883,6 @@ button.exp-toggle[aria-expanded="true"] .exp-chevron {
   margin-right: -0.75rem;
   border-radius: 8px;
   border: 1px solid transparent;
-  transition: transform var(--transition-time) ease,
-              background-color var(--transition-time) ease,
-              border-color var(--transition-time) ease,
-              box-shadow var(--transition-time) ease;
-}
-
-.ielts-card:hover {
-  background-color: var(--surface-color);
-  border-color: var(--border-light);
-  box-shadow: var(--shadow-sm);
-  transform: translateX(var(--animation-offset));
 }
 
 .ielts-main {
