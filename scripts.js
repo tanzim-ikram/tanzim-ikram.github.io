@@ -7,11 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // Load publications data
   loadPublications();
 
-  // Initialize animation delays for sections
-  const sections = document.querySelectorAll('section');
-  sections.forEach((section, index) => {
-    section.style.animationDelay = `${index * 0.1}s`;
-  });
+  // Staggered section reveal via Intersection Observer
+  initSectionReveal();
 
   // Add event listener for toggle button
   const toggleButton = document.getElementById('toggle-publications');
@@ -27,7 +24,41 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Initialize collapsible experience detail toggles
   initExpToggles();
+
+  // Scroll progress bar
+  const progressBar = document.getElementById('scroll-progress');
+  if (progressBar) {
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = pct + '%';
+    }, { passive: true });
+  }
 });
+
+// Staggered section reveal with IntersectionObserver
+function initSectionReveal() {
+  const sections = document.querySelectorAll('section');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.classList.contains('visible')) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.06,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  sections.forEach((section, index) => {
+    // Stagger delay based on index but cap it so late sections don't wait too long
+    section.style.animationDelay = `${Math.min(index * 0.05, 0.3)}s`;
+    observer.observe(section);
+  });
+}
 
 // Initialize mobile menu toggle functionality
 function initMobileMenu() {
