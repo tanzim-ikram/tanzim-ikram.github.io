@@ -976,87 +976,177 @@ button.exp-toggle[aria-expanded="true"] .exp-chevron {
 .ielts-card {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 0;
   margin-bottom: 1.25rem;
-  padding: 0.85rem 0.75rem;
+  padding: 1rem 1.1rem;
   margin-left: -0.75rem;
   margin-right: -0.75rem;
-  border-radius: 8px;
-  border: 1px solid transparent;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  background: var(--surface-color);
 }
 
-.ielts-main {
+/* Left column: title + CEFR badge */
+.ielts-meta {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.35rem;
   flex-shrink: 0;
-  min-width: 120px;
+  min-width: 110px;
+  padding-right: 1.25rem;
 }
 
+.ielts-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.ielts-cefr {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--accent-color);
+  background: var(--accent-light);
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  border-radius: 100px;
+  padding: 0.1rem 0.5rem;
+  letter-spacing: 0.03em;
+  width: fit-content;
+}
+
+/* Centre: prominent overall band score */
+.ielts-overall {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  flex-shrink: 0;
+  padding: 0 1.5rem;
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  min-width: 85px;
+}
+
+.ielts-overall-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.ielts-overall-label {
+  font-size: 0.62rem;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  white-space: nowrap;
+}
+
+/* Hidden — replaced by borders on ielts-overall */
 .ielts-divider {
-  width: 1px;
-  align-self: stretch;
-  background: var(--border-color);
-  flex-shrink: 0;
+  display: none;
 }
 
+/* Right: subscore grid */
 .ielts-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  flex: 1.5;
+  flex: 1;
+  padding-left: 0.5rem;
 }
 
 .ielts-subscore {
   display: flex;
   flex-direction: column;
-  gap: 0.1rem;
-  padding: 0.2rem 1rem 0.2rem 1rem;
+  gap: 0.2rem;
+  padding: 0.2rem 1rem;
   border-right: 1px solid var(--border-light);
+  align-items: center;
 }
 
 .ielts-subscore:last-child {
   border-right: none;
 }
 
-.ielts-subscore:first-child {
-  padding-left: 0.5rem;
-}
-
 .ielts-label {
-  font-size: 0.72rem;
-  color: var(--text-secondary);
+  font-size: 0.66rem;
+  color: var(--text-tertiary);
   font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   white-space: nowrap;
 }
 
 .ielts-value {
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: var(--text-color);
 }
 
+/* ─── Mobile (≤560px) ─────────────────────────────────────── */
 @media (max-width: 560px) {
   .ielts-card {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
+    align-items: stretch;
+    gap: 0;
+    padding: 1rem;
   }
 
-  .ielts-divider {
+  /* Row 1: "Academic IELTS" left, CEFR badge right */
+  .ielts-meta {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
-    height: 1px;
-    align-self: auto;
+    padding-right: 0;
+    min-width: unset;
+    padding-bottom: 0.75rem;
   }
 
+  /* Row 2: "Overall Band" label left, big score right */
+  .ielts-overall {
+    flex-direction: row-reverse;        /* value first in DOM = right */
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+    padding: 0.6rem 0;
+    min-width: unset;
+    margin-bottom: 0.75rem;
+  }
+
+  .ielts-overall-value {
+    font-size: 1.75rem;
+  }
+
+  .ielts-overall-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+  }
+
+  /* 2×2 subscore grid */
   .ielts-grid {
     grid-template-columns: 1fr 1fr;
     width: 100%;
+    padding-left: 0;
   }
 
   .ielts-subscore {
-    padding: 0.3rem 0.5rem;
+    padding: 0.5rem 0.4rem;
     border-right: none;
     border-bottom: 1px solid var(--border-light);
+    align-items: flex-start;
+  }
+
+  .ielts-subscore:nth-child(odd) {
+    border-right: 1px solid var(--border-light);
   }
 
   .ielts-subscore:nth-child(3),
