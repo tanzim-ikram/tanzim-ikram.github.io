@@ -1491,6 +1491,16 @@ footer {
     height: 160px;
   }
 
+  #projects .misc-item {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0.85rem;
+    background-color: var(--surface-color);
+  }
+
   /* Disable transform animations on touch */
   .publication-item:hover,
   .award-item:hover,
