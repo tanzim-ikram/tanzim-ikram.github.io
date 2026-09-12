@@ -1493,7 +1493,8 @@ footer {
 
   #projects .misc-item,
   #ux-casestudies .misc-item,
-  .edu-item {
+  .edu-item,
+  .service-category {
     border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 0.85rem 1rem;
@@ -1501,6 +1502,22 @@ footer {
     margin-right: 0;
     margin-bottom: 0.85rem;
     background-color: var(--surface-color);
+  }
+
+  .service-title {
+    color: var(--accent-color);
+    font-size: 0.76rem;
+    margin-bottom: 0.55rem;
+  }
+
+  .skill-tags {
+    gap: 0.4rem;
+  }
+
+  .skill-tag {
+    background: var(--bg-color);
+    font-size: 0.8rem;
+    padding: 0.22rem 0.65rem;
   }
 
   .edu-status {
