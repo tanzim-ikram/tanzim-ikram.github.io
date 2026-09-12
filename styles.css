@@ -826,15 +826,19 @@ section.visible {
 /* ─── Education ───────────────────────────────────────────── */
 .edu-item {
   margin-bottom: 1.25rem;
-  padding: 0.75rem;
-  margin-left: -0.75rem;
-  margin-right: -0.75rem;
-  border-radius: 8px;
-  border: 1px solid transparent;
+  padding: 0.65rem 0;
+  padding-left: 0.9rem;
+  border-left: 2px solid rgba(74, 116, 185, 0.2);
+  transition: transform var(--transition-time) ease, border-left-color var(--transition-time) ease;
+}
+
+.edu-item:hover {
+  border-left-color: var(--accent-color);
+  transform: translateX(var(--animation-offset));
 }
 
 .edu-header {
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.55rem;
 }
 
 .edu-degree {
@@ -843,13 +847,14 @@ section.visible {
   align-items: baseline;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 0.15rem;
+  margin-bottom: 0.2rem;
 }
 
 .edu-status {
   font-size: 0.82rem;
-  color: var(--text-secondary);
+  color: var(--accent-color);
   font-style: italic;
+  font-weight: 500;
 }
 
 .edu-institution {
@@ -1054,26 +1059,38 @@ button.exp-toggle[aria-expanded="true"] .exp-chevron {
   border: 1px solid transparent;
 }
 
-/* Hover effect kept for Projects cards */
-#projects .misc-item {
-  margin-bottom: 0.5rem;
-  padding: 0.55rem 0.75rem;
+/* Projects and UX Research Case Studies cards */
+#projects .misc-item,
+#ux-casestudies .misc-item {
+  margin-bottom: 0.85rem;
+  padding: 0.85rem 1rem;
+  margin-left: 0;
+  margin-right: 0;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--surface-color);
   transition: transform var(--transition-time) ease, background-color var(--transition-time) ease, border-color var(--transition-time) ease, box-shadow var(--transition-time) ease;
 }
 
-#projects .misc-item:hover {
-  background-color: var(--surface-color);
-  border-color: var(--border-color);
+#projects .misc-item:hover,
+#ux-casestudies .misc-item:hover {
+  border-color: rgba(0, 150, 255, 0.35);
   box-shadow: var(--shadow-md);
   transform: translateX(var(--animation-offset));
 }
 
-#projects .misc-item:hover strong {
+#projects .misc-item:hover strong,
+#ux-casestudies .misc-item:hover strong {
   color: var(--accent-hover);
 }
 
 #projects .misc-item p:last-child {
   margin-bottom: 0.1rem;
+}
+
+#ux-casestudies .misc-item ul {
+  padding-left: 1.2rem;
+  margin: 0.35rem 0 0.1rem;
 }
 
 .misc-item p,
@@ -1424,7 +1441,6 @@ footer {
 
   #projects .misc-item,
   #ux-casestudies .misc-item,
-  .edu-item,
   .service-category,
   .exp-item {
     border: 1px solid var(--border-color);
@@ -1434,6 +1450,17 @@ footer {
     margin-right: 0;
     margin-bottom: 0.85rem;
     background-color: var(--surface-color);
+  }
+
+  .edu-item {
+    padding: 0.65rem 0;
+    padding-left: 0.9rem;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0.85rem;
+    border-left: 2px solid rgba(74, 116, 185, 0.2);
+    border-radius: 0;
+    background: none;
   }
 
   .service-title {
@@ -1452,10 +1479,6 @@ footer {
     padding: 0.22rem 0.65rem;
   }
 
-  .edu-status {
-    color: var(--accent-color);
-    font-weight: 500;
-  }
 
   button.exp-toggle {
     padding: 0.45rem 0.65rem;
