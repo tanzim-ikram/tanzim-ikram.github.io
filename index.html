@@ -315,26 +315,72 @@
         </section>
 
         <section id="projects">
-            <h2>Projects</h2>
+            <div class="projects-header">
+                <h2 id="projects-toggle-header">Featured Projects (3)</h2>
+                <button id="toggle-projects" class="toggle-publications">Show All (5)</button>
+            </div>
 
-            <div class="misc-item">
-                <p><strong>MoodDial</strong></p>
+            <!-- Featured projects (shown by default) -->
+            <div class="misc-item" data-project-selected="1">
+                <div class="project-title-row">
+                    <p><strong>AirCursor</strong></p>
+                    <a href="https://github.com/tanzim-ikram/AirCursor" target="_blank" rel="noopener" class="project-github-link" aria-label="AirCursor on GitHub"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+                <p>
+                    A dual-mode ESP32 wireless controller that uses an MPU6050 IMU and BLE HID to function as a
+                    gesture-controlled mouse and a hand-motion presentation remote, with tactile buttons for clicks,
+                    scrolling, slide navigation, and laser-pointer toggling.
+                </p>
+            </div>
+
+            <div class="misc-item" data-project-selected="1">
+                <div class="project-title-row">
+                    <p><strong>MoodDial</strong></p>
+                    <a href="https://github.com/tanzim-ikram/MoodDial" target="_blank" rel="noopener" class="project-github-link" aria-label="MoodDial on GitHub"><i class="fab fa-github"></i> GitHub</a>
+                </div>
                 <p>
                     A tangible, emotion-aware interaction device that lets users express their emotional state via a
                     physical rotary dial instead of a digital interface.
                     Transmits mood data over WiFi to a backend AI model, which delivers supportive, mood-appropriate
-                    responses through Telegram,
-                    enabling low-effort, asynchronous emotional support.
+                    responses through Telegram, enabling low-effort, asynchronous emotional support.
                 </p>
             </div>
 
-            <div class="misc-item">
-                <p><strong>PromptPad</strong></p>
+            <div class="misc-item" data-project-selected="1">
+                <div class="project-title-row">
+                    <p><strong>PromptPad</strong></p>
+                    <a href="https://github.com/tanzim-ikram/PromptPad" target="_blank" rel="noopener" class="project-github-link" aria-label="PromptPad on GitHub"><i class="fab fa-github"></i> GitHub</a>
+                </div>
                 <p>
                     A tangible AI interaction device that streamlines common AI tasks — such as summarization,
                     translation, and rephrasing —
                     through dedicated physical buttons and real-time visual feedback, reducing interaction friction in
                     everyday AI usage.
+                </p>
+            </div>
+
+            <!-- Hidden projects (shown on toggle) -->
+            <div class="misc-item" data-project-selected="0" hidden>
+                <div class="project-title-row">
+                    <p><strong>PulsePlay</strong></p>
+                    <a href="https://github.com/tanzim-ikram/PulsePlay" target="_blank" rel="noopener" class="project-github-link" aria-label="PulsePlay on GitHub"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+                <p>
+                    A tangible IoT-based music recommendation system that allows users to select moods through a
+                    physical rotary controller. The system integrates AI-driven recommendation generation with
+                    web-based music playback to reduce screen dependency and cognitive load.
+                </p>
+            </div>
+
+            <div class="misc-item" data-project-selected="0" hidden>
+                <div class="project-title-row">
+                    <p><strong>ShooterX</strong></p>
+                    <a href="https://github.com/tanzim-ikram/ShooterX" target="_blank" rel="noopener" class="project-github-link" aria-label="ShooterX on GitHub"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+                <p>
+                    An ESP32-powered customizable FPS gaming controller integrating MPU6050 motion tracking, rotary
+                    encoders, touch sensors, and Bluetooth HID communication. Designed to enhance immersive gameplay
+                    through gyroscopic aiming, haptic feedback, and modular physical controls.
                 </p>
             </div>
         </section>

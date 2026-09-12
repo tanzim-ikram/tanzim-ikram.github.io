@@ -25,6 +25,9 @@ document.addEventListener('DOMContentLoaded', function () {
   // Initialize collapsible experience detail toggles
   initExpToggles();
 
+  // Initialize project toggle
+  initProjectToggle();
+
   // Scroll progress bar
   const progressBar = document.getElementById('scroll-progress');
   if (progressBar) {
@@ -101,6 +104,36 @@ function initExpToggles() {
         btn.setAttribute('aria-expanded', 'true');
       }
     });
+  });
+}
+
+// Initialize projects show-all toggle
+function initProjectToggle() {
+  const toggleBtn = document.getElementById('toggle-projects');
+  const header = document.getElementById('projects-toggle-header');
+  if (!toggleBtn) return;
+
+  const allItems = document.querySelectorAll('#projects .misc-item');
+  const featuredCount = [...allItems].filter(el => el.dataset.projectSelected === '1').length;
+  const totalCount = allItems.length;
+  let showingFeatured = true;
+
+  toggleBtn.addEventListener('click', () => {
+    showingFeatured = !showingFeatured;
+
+    allItems.forEach(item => {
+      if (item.dataset.projectSelected === '0') {
+        item.hidden = showingFeatured;
+      }
+    });
+
+    if (showingFeatured) {
+      header.textContent = `Featured Projects (${featuredCount})`;
+      toggleBtn.textContent = `Show All (${totalCount})`;
+    } else {
+      header.textContent = `All Projects (${totalCount})`;
+      toggleBtn.textContent = `Show Featured (${featuredCount})`;
+    }
   });
 }
 

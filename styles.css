@@ -906,6 +906,57 @@ button.exp-toggle[aria-expanded="true"] .exp-chevron {
 }
 
 /* ─── Misc items ──────────────────────────────────────────── */
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2.75rem;
+  margin-bottom: 1.4rem;
+}
+
+.projects-header h2 {
+  margin: 0;
+  flex: 1;
+}
+
+.project-title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.project-title-row p {
+  margin: 0;
+}
+
+.project-github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 100px;
+  padding: 0.15rem 0.6rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color var(--transition-time) ease, border-color var(--transition-time) ease, background var(--transition-time) ease;
+  flex-shrink: 0;
+}
+
+.project-github-link i {
+  font-size: 0.72rem;
+}
+
+.project-github-link:hover {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+  background: var(--accent-light);
+}
+
 .misc-item {
   margin-bottom: 1.25rem;
   padding: 0.75rem;
