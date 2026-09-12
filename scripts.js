@@ -28,6 +28,9 @@ document.addEventListener('DOMContentLoaded', function () {
   // Initialize project toggle
   initProjectToggle();
 
+  // Initialize news scroll hint
+  initNewsScrollHint();
+
   // Scroll progress bar
   const progressBar = document.getElementById('scroll-progress');
   if (progressBar) {
@@ -39,6 +42,30 @@ document.addEventListener('DOMContentLoaded', function () {
     }, { passive: true });
   }
 });
+
+// News scroll affordance: fade + hint hide on scroll
+function initNewsScrollHint() {
+  const container = document.getElementById('news-container');
+  const fade = document.getElementById('news-fade');
+  const hint = document.getElementById('news-scroll-hint');
+  if (!container || !fade || !hint) return;
+
+  function updateHint() {
+    const atBottom = container.scrollTop + container.clientHeight >= container.scrollHeight - 4;
+    if (container.scrollTop > 0) {
+      hint.classList.add('hidden');
+    }
+    if (atBottom) {
+      fade.classList.add('hidden');
+    } else {
+      fade.classList.remove('hidden');
+    }
+  }
+
+  container.addEventListener('scroll', updateHint, { passive: true });
+  // Initial check
+  updateHint();
+}
 
 // Staggered section reveal with IntersectionObserver
 function initSectionReveal() {

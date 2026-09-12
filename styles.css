@@ -29,6 +29,30 @@ body {
   font-size: 0.935rem;
 }
 
+/* ─── Global minimal scrollbar ───────────────────────────── */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 100px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
+
 /* ─── Header ──────────────────────────────────────────────── */
 header {
   margin-bottom: 2.75rem;
@@ -659,15 +683,79 @@ section.visible {
 }
 
 /* ─── News ────────────────────────────────────────────────── */
+.news-wrapper {
+  position: relative;
+}
+
 .news-container {
   max-height: 300px;
   overflow-y: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) transparent;
+  padding-right: 0.4rem;
 }
 
 .news-container::-webkit-scrollbar {
-  display: none;
+  width: 4px;
+}
+
+.news-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.news-container::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 100px;
+}
+
+.news-container::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
+
+/* Bottom fade gradient — hides when scrolled to bottom */
+.news-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent, var(--bg-color));
+  border-radius: 0 0 8px 8px;
+  transition: opacity 0.3s ease;
+}
+
+.news-fade.hidden {
+  opacity: 0;
+}
+
+/* Scroll hint pill */
+.news-scroll-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  margin-top: 0.6rem;
+  font-size: 0.72rem;
+  color: var(--text-tertiary);
+  letter-spacing: 0.02em;
+  transition: opacity 0.4s ease;
+  user-select: none;
+}
+
+.news-scroll-hint i {
+  font-size: 0.65rem;
+  animation: bounceDown 1.4s ease-in-out infinite;
+}
+
+.news-scroll-hint.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes bounceDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
 }
 
 .news-list {
@@ -923,7 +1011,7 @@ button.exp-toggle[aria-expanded="true"] .exp-chevron {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 0.5rem;
   flex-wrap: wrap;
 }
 
@@ -968,6 +1056,8 @@ button.exp-toggle[aria-expanded="true"] .exp-chevron {
 
 /* Hover effect kept for Projects cards */
 #projects .misc-item {
+  margin-bottom: 0.5rem;
+  padding: 0.55rem 0.75rem;
   transition: transform var(--transition-time) ease, background-color var(--transition-time) ease, border-color var(--transition-time) ease, box-shadow var(--transition-time) ease;
 }
 
@@ -980,6 +1070,10 @@ button.exp-toggle[aria-expanded="true"] .exp-chevron {
 
 #projects .misc-item:hover strong {
   color: var(--accent-hover);
+}
+
+#projects .misc-item p:last-child {
+  margin-bottom: 0.1rem;
 }
 
 .misc-item p,
