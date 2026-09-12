@@ -13,7 +13,9 @@
       "thumbnail": "images/publications/Dementia.png",
       "selected": 1,
       "award": "",
-      "links": {}
+      "links": {
+        "doi": "https://doi.org/10.1007/978-3-032-30414-8_19"
+      }
     },
     {
       "title": "ReedMap: A Tangible Interaction System for Context-Aware and Division-Based Map Navigation",
@@ -29,7 +31,9 @@
       "thumbnail": "images/publications/ReedMap.png",
       "selected": 1,
       "award": "",
-      "links": {}
+      "links": {
+        "doi": "https://doi.org/10.1007/978-3-032-30086-7_30"
+      }
     },
     {
       "title": "AirTune: A Tangible Interaction System for Gesture-Based and Contact-less Media Control",
@@ -45,7 +49,9 @@
       "thumbnail": "images/publications/AirTune.png",
       "selected": 1,
       "award": "",
-      "links": {}
+      "links": {
+        "doi": "https://doi.org/10.1007/978-3-032-29593-4_22"
+      }
     },
     {
       "title": "GlobeStick: Innovating Map Navigation Through Tactile Interaction and User-Centered Design",
@@ -61,7 +67,9 @@
       "thumbnail": "images/publications/GlobeStick.jpg",
       "selected": 1,
       "award": "",
-      "links": {}
+      "links": {
+        "doi": "https://doi.org/10.1007/978-3-031-93233-5_16"
+      }
     },
     {
       "title": "Melanoma Detection Using Augmented ResNet34 for High-Precision Dermoscopic Image Classification",
@@ -78,7 +86,9 @@
       "thumbnail": "images/publications/Melanoma.jpg",
       "selected": 0,
       "award": "",
-      "links": {}
+      "links": {
+        "doi": "https://doi.org/10.1007/978-3-031-98161-6_8"
+      }
     }
   ]
 }

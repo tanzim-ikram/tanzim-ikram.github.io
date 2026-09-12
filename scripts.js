@@ -116,6 +116,7 @@ function loadPublications() {
     .then(data => {
       console.log("Publications loaded successfully:", data);
       allPublications = data.publications;
+      updatePublicationHeaderAndButton();
       renderPublications(true);
     })
     .catch(error => {
@@ -134,13 +135,24 @@ function displayFallbackPublications() {
 // Toggle between showing all or selected publications
 function togglePublications() {
   showingSelected = !showingSelected;
+  updatePublicationHeaderAndButton();
   renderPublications(showingSelected);
+}
 
-  // Update button text
+// Update the header and toggle button label with publication counts
+function updatePublicationHeaderAndButton() {
+  const selectedCount = allPublications.filter(pub => pub.selected === 1).length;
+  const totalCount = allPublications.length;
+
   const toggleButton = document.getElementById('toggle-publications');
-  toggleButton.textContent = showingSelected ? 'Show All' : 'Show Selected';
   const toggleHeader = document.getElementById('toggle-header');
-  toggleHeader.textContent = showingSelected ? 'Selected Publications' : 'All Publications';
+
+  if (toggleButton) {
+    toggleButton.textContent = showingSelected ? `Show All (${totalCount})` : `Show Selected (${selectedCount})`;
+  }
+  if (toggleHeader) {
+    toggleHeader.textContent = showingSelected ? `Selected Publications (${selectedCount})` : `All Publications (${totalCount})`;
+  }
 }
 
 // Render publications based on selection state
@@ -208,10 +220,31 @@ function createPublicationElement(publication) {
   const venueContainer = document.createElement('div');
   venueContainer.className = 'pub-venue-container';
 
-  const venue = document.createElement('div');
+  const venueWrapper = document.createElement('div');
+  venueWrapper.className = 'pub-venue-line';
+
+  const venue = document.createElement('span');
   venue.className = 'pub-venue';
   venue.textContent = publication.venue;
-  venueContainer.appendChild(venue);
+  venueWrapper.appendChild(venue);
+
+  // Add DOI inline next to venue
+  if (publication.links && publication.links.doi) {
+    const sep = document.createElement('span');
+    sep.className = 'pub-venue-sep';
+    sep.textContent = '·';
+    venueWrapper.appendChild(sep);
+
+    const doiLink = document.createElement('a');
+    doiLink.href = publication.links.doi;
+    doiLink.target = '_blank';
+    doiLink.rel = 'noopener';
+    doiLink.className = 'pub-doi-link';
+    doiLink.innerHTML = '<i class="fas fa-link" aria-hidden="true"></i> DOI';
+    venueWrapper.appendChild(doiLink);
+  }
+
+  venueContainer.appendChild(venueWrapper);
 
   // Add award if it exists
   if (publication.award && publication.award.length > 0) {
@@ -223,14 +256,17 @@ function createPublicationElement(publication) {
 
   content.appendChild(venueContainer);
 
-  // Add links if they exist
-  if (publication.links) {
+  // Add other links (pdf, code, project) if they exist
+  const hasExtraLinks = publication.links && (publication.links.pdf || publication.links.code || publication.links.project);
+  if (hasExtraLinks) {
     const links = document.createElement('div');
     links.className = 'pub-links';
 
     if (publication.links.pdf) {
       const pdfLink = document.createElement('a');
       pdfLink.href = publication.links.pdf;
+      pdfLink.target = '_blank';
+      pdfLink.rel = 'noopener';
       pdfLink.textContent = '[PDF]';
       links.appendChild(pdfLink);
     }
@@ -238,6 +274,8 @@ function createPublicationElement(publication) {
     if (publication.links.code) {
       const codeLink = document.createElement('a');
       codeLink.href = publication.links.code;
+      codeLink.target = '_blank';
+      codeLink.rel = 'noopener';
       codeLink.textContent = '[Code]';
       links.appendChild(codeLink);
     }
@@ -245,6 +283,8 @@ function createPublicationElement(publication) {
     if (publication.links.project) {
       const projectLink = document.createElement('a');
       projectLink.href = publication.links.project;
+      projectLink.target = '_blank';
+      projectLink.rel = 'noopener';
       projectLink.textContent = '[Project Page]';
       links.appendChild(projectLink);
     }
