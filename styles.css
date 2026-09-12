@@ -1494,7 +1494,8 @@ footer {
   #projects .misc-item,
   #ux-casestudies .misc-item,
   .edu-item,
-  .service-category {
+  .service-category,
+  .exp-item {
     border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 0.85rem 1rem;
@@ -1523,6 +1524,23 @@ footer {
   .edu-status {
     color: var(--accent-color);
     font-weight: 500;
+  }
+
+  button.exp-toggle {
+    padding: 0.45rem 0.65rem;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    margin-top: 0.45rem;
+    margin-bottom: 0.35rem;
+    box-sizing: border-box;
+    font-size: 0.76rem;
+    font-weight: 600;
+  }
+
+  .exp-details {
+    padding-left: 1.15rem;
+    margin: 0.45rem 0 0.2rem;
   }
 
   .award-item {
