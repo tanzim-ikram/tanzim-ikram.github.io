@@ -1249,75 +1249,6 @@ button.exp-toggle[aria-expanded="true"] .exp-chevron {
   color: var(--text-color);
 }
 
-/* ─── Mobile (≤560px) ─────────────────────────────────────── */
-@media (max-width: 560px) {
-  .ielts-card {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    padding: 1rem;
-  }
-
-  /* Row 1: "Academic IELTS" left, CEFR badge right */
-  .ielts-meta {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding-right: 0;
-    min-width: unset;
-    padding-bottom: 0.75rem;
-  }
-
-  /* Row 2: "Overall Band" label left, big score right */
-  .ielts-overall {
-    flex-direction: row-reverse;        /* value first in DOM = right */
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    border-left: none;
-    border-right: none;
-    border-top: 1px solid var(--border-light);
-    border-bottom: 1px solid var(--border-light);
-    padding: 0.6rem 0;
-    min-width: unset;
-    margin-bottom: 0.75rem;
-  }
-
-  .ielts-overall-value {
-    font-size: 1.75rem;
-  }
-
-  .ielts-overall-label {
-    font-size: 0.7rem;
-    letter-spacing: 0.05em;
-    color: var(--text-secondary);
-  }
-
-  /* 2×2 subscore grid */
-  .ielts-grid {
-    grid-template-columns: 1fr 1fr;
-    width: 100%;
-    padding-left: 0;
-  }
-
-  .ielts-subscore {
-    padding: 0.5rem 0.4rem;
-    border-right: none;
-    border-bottom: 1px solid var(--border-light);
-    align-items: flex-start;
-  }
-
-  .ielts-subscore:nth-child(odd) {
-    border-right: 1px solid var(--border-light);
-  }
-
-  .ielts-subscore:nth-child(3),
-  .ielts-subscore:nth-child(4) {
-    border-bottom: none;
-  }
-}
-
 /* ─── Footer ──────────────────────────────────────────────── */
 footer {
   margin-top: 3rem;
@@ -1584,6 +1515,78 @@ footer {
     margin-left: 0;
     margin-top: 0.25rem;
     font-style: italic;
+  }
+
+  .ielts-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 1.25rem;
+    border-radius: 8px;
+  }
+
+  .ielts-meta {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-right: 0;
+    min-width: unset;
+    padding-bottom: 0.75rem;
+  }
+
+  .ielts-overall {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+    padding: 0.6rem 0;
+    min-width: unset;
+    margin-bottom: 0.75rem;
+  }
+
+  .ielts-overall-value {
+    font-size: 1.75rem;
+  }
+
+  .ielts-overall-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+  }
+
+  .ielts-grid {
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .ielts-subscore {
+    padding: 0.5rem 0.4rem;
+    border-right: none;
+    border-bottom: 1px solid var(--border-light);
+    align-items: flex-start;
+  }
+
+  .ielts-subscore:nth-child(odd) {
+    border-right: 1px solid var(--border-light);
+  }
+
+  .ielts-subscore:nth-child(3),
+  .ielts-subscore:nth-child(4) {
+    border-bottom: none;
+  }
+
+  .activity-section-title {
+    margin-top: 1.4rem;
+    margin-bottom: 0.65rem;
   }
 
   .activity-item {
