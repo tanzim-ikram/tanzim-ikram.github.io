@@ -1491,7 +1491,8 @@ footer {
     height: 160px;
   }
 
-  #projects .misc-item {
+  #projects .misc-item,
+  #ux-casestudies .misc-item {
     border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 0.85rem 1rem;
@@ -1544,9 +1545,48 @@ footer {
     font-style: italic;
   }
 
+  .activity-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+    padding: 0.85rem 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0.65rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--surface-color);
+  }
+
+  .activity-role {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--accent-color);
+    background: var(--accent-light);
+    border: 1px solid rgba(0, 150, 255, 0.25);
+    border-radius: 100px;
+    padding: 0.12rem 0.55rem;
+    line-height: 1.4;
+  }
+
+  .activity-sep {
+    display: none;
+  }
+
+  .activity-org {
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--text-color);
+  }
+
   /* Disable transform animations on touch */
   .publication-item:hover,
   .award-item:hover,
+  .activity-item:hover,
   .service-category:hover,
   .misc-item:hover,
   .news-list li:hover,
