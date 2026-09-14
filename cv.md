@@ -157,6 +157,11 @@ verification to strengthen security and user trust.
   through dedicated physical buttons and real-time visual feedback,
   reducing interaction friction in everyday AI usage.
 
+- **FigmaPad:** A custom BLE keyboard that streamlines common Figma
+  tasks, such as tool selection, shortcuts, and zoom control, through
+  dedicated physical buttons and a rotary encoder, reducing interaction
+  friction in everyday design workflows.
+
 # Technical Skills
 
 - **Design:** Figma, User Research, Usability Testing, Wireframing,
