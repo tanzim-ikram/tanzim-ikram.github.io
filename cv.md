@@ -99,11 +99,15 @@ Design, Artificial Intelligence and Embedded Systems.
 - Built and deployed a full-stack company website, including landing
   page, admin dashboard, and CMS, using Laravel, Vue.js, and MySQL.
 
-- Designed the EnvoYouth mobile application and established a consistent
-  design system aligned with brand guidelines.
+- Designed EnvoYouth, a mobile platform connecting youth climate
+  activists, researchers, and sustainability advocates, and established
+  a consistent design system aligned with the platform’s environmental
+  mission and brand guidelines.
 
-- Automated bulk personalized invitation letter generation and email
-  distribution using Python, reducing manual outreach effort.
+- Automated personalized invitation generation and bulk email
+  distribution using Python, enabling outreach at scale while saving
+  significant time and reducing repetitive manual effort for the
+  EnvoYouth launching ceremony.
 
   ----------------------------------------- --------------------------------
   **Amateur Experimental Rocketry Dhaka**                         **Hybrid**
@@ -169,12 +173,12 @@ verification to strengthen security and user trust.
 
 - **Programming Languages:** Python, JavaScript/TypeScript, PHP, C/C++
 
-- **Research & Data Tools:** NumPy, Pandas, Matplotlib
+- **Research & Data Tools:** NumPy, Pandas, Matplotlib, R
 
-- **Web Frameworks:** Next.js, React, Node.js
+- **Web Frameworks:** Next.js, React, Node.js, Nest.js
 
-- **Embedded Systems:** Arduino, ESP32/ESP8266, Sensor Integration, PCB
-  Design, WebSocket
+- **Embedded Systems:** Arduino, ESP32/ESP8266, Sensor Integration, Circuit
+  Design
 
 - **Tools:** Git, Postman, Adobe Creative Suite, EasyEDA, Overleaf, VS
   Code, Jupyter Notebook, Google Colab
@@ -197,7 +201,7 @@ Listening: 8.5, Reading: 8.5, Writing: 6.5, Speaking: 6.5
 
 # Extra-Curricular Activities
 
-- **Participant**, Inter University Line Following Robot Competitions *(2022 – 2025)*
+- **Participant**, Inter University Line Following Robot Competitions *(2022 – 2024)*
 
 - **Participant**, 2nd Bangladesh Robot Olympiad (BdRO) *(2019)*
 
@@ -205,11 +209,11 @@ Listening: 8.5, Reading: 8.5, Writing: 6.5, Speaking: 6.5
 
 - **Participant**, National Leadership Conference *(2019)*
 
-- **Participant**, Competition on Innovation for Smart City
+- **Participant**, Competition on Innovation for Smart City *(2019)*
 
 # Volunteering Activities
 
-- **Probationary Member**, AIUB Environment Club *(Oct 2023 – Dec 2025)*
+- **Probationary Member**, AIUB Environment Club *(Oct 2023 – Jul 2024)*
 
 - **Tech Envoy**, Tech Topia *(Nov 2023 – Apr 2024)*
 
