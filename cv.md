@@ -213,7 +213,7 @@ Listening: 8.5, Reading: 8.5, Writing: 6.5, Speaking: 6.5
 
 # Volunteering Activities
 
-- **Probationary Member**, AIUB Environment Club *(Oct 2023 – Jul 2024)*
+- **General Member**, AIUB Environment Club *(Oct 2023 – Jul 2024)*
 
 - **Tech Envoy**, Tech Topia *(Nov 2023 – Apr 2024)*
 
