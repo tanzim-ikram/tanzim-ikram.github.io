@@ -10,7 +10,7 @@ Live Site: [tanzim-ikram.github.io](https://tanzim-ikram.github.io/)
 - **Mobile Friendly Hamburger Menu:** Collapses into a sleek hamburger menu on mobile screens (`<= 768px`) with an overlay dropdown that auto-closes upon navigation.
 - **Dynamic Publication Viewer:** Integrates with `publications.json` to dynamically render research papers, including thumbnail previews, co-authors, publisher venues, external links (PDF, code, etc.), and image viewer modal overlays.
 - **Redesigned IELTS Scorecard:** Features a clean, horizontal scorecard layout matching the site's typography, presenting the overall CEFR level alongside segmented subscores.
-- **Extra-Curricular Activities Section:** Minimal, modern list items with dotted role/organization split and a left-border accent hover glow effect.
+- **Extra-Curricular &amp; Volunteering Activities Sections:** Minimal, modern list items organized by category (Extra-Curricular and Volunteering) with role, organization, and timeline split, plus a left-border accent hover glow effect.
 - **Social Headers & Integrated CV:** Seamlessly balances social icons (ORCID, Google Scholar, LinkedIn, GitHub, Email) with a matching pill link to download the CV.
 
 ## 🛠️ File Structure

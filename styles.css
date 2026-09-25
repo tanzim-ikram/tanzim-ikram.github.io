@@ -1152,6 +1152,17 @@ button.exp-toggle[aria-expanded="true"] .exp-chevron {
   color: var(--text-secondary);
 }
 
+.activity-timeline {
+  margin-left: auto;
+  font-size: 0.82rem;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--accent-color);
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding-left: 0.75rem;
+}
+
 /* ─── IELTS Card ──────────────────────────────────────────── */
 .ielts-card {
   display: flex;
@@ -1648,6 +1659,15 @@ footer {
     font-weight: 500;
     line-height: 1.5;
     color: var(--text-color);
+  }
+
+  .activity-timeline {
+    margin-left: 0;
+    padding-left: 0;
+    font-size: 0.78rem;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--accent-color);
   }
 
   /* Disable transform animations on touch */

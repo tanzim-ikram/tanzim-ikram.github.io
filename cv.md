@@ -195,13 +195,29 @@ verification to strengthen security and user trust.
 
 Listening: 8.5, Reading: 8.5, Writing: 6.5, Speaking: 6.5
 
-# Extra-Curricular Activity
+# Extra-Curricular Activities
 
-- Campus Ambassador, English Olympiad
+- **Participant**, Inter University Line Following Robot Competitions *(2022 – 2025)*
 
-- Senior Member, Connecting Youth for Change
+- **Participant**, 2nd Bangladesh Robot Olympiad (BdRO) *(2019)*
 
-- Participant, Inter University Line Following Robot Competitions
+- **Participant**, Bangladesh - USA Online Exchange Program *(2019)*
+
+- **Participant**, National Leadership Conference *(2019)*
+
+- **Participant**, Competition on Innovation for Smart City
+
+# Volunteering Activities
+
+- **Probationary Member**, AIUB Environment Club *(Oct 2023 – Dec 2025)*
+
+- **Tech Envoy**, Tech Topia *(Nov 2023 – Apr 2024)*
+
+- **Senior Member**, Connecting Youth for Change (CYC) *(May 2019 – Dec 2024)*
+
+- **Member**, Roboment *(Oct 2018 – Apr 2022)*
+
+- **Campus Ambassador**, English Olympiad *(Jul 2018 – Jan 2022)*
 
 # References
 
