@@ -18,59 +18,90 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:creator" content="@tanzim_ikram">
     <title>Tanzim Ikram Sheikh</title>
+    <meta name="theme-color" content="#0096FF">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;500;600&display=swap">
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap">
+    <script>
+        document.documentElement.classList.add('js');
+        try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) { }
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body id="top">
     <div id="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
-    <nav class="side-nav" aria-label="Page sections">
-        <span class="nav-brand">Tanzim Ikram</span>
-        <button class="hamburger-menu" aria-label="Toggle navigation menu" aria-expanded="false">
-            <i class="fas fa-bars"></i>
-        </button>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#news">Featured News</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#publications">Publications</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#ux-casestudies">Case Studies</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#awards">Awards</a></li>
-            <li><a href="#miscellaneous">Others</a></li>
-        </ul>
-    </nav>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <header>
-        <div class="header-content">
-            <h1>Tanzim Ikram Sheikh</h1>
-            <p>CS Graduate &amp; HCI Researcher • <a href="https://www.aiub.edu/" target="_blank"
-                    rel="noopener">AIUB</a>, Bangladesh</p>
-            <div class="social-links-header">
-                <a href="/CV_Tanzim_Ikram_Sheikh.pdf" download><i class="fas fa-file-alt"></i>Resume/CV</a>
-                <a href="https://scholar.google.com/citations?hl=en&user=T5CuD1MAAAAJ" target="_blank" rel="noopener"><i
-                        class="fas fa-graduation-cap"></i>Google Scholar</a>
-                <a href="https://orcid.org/0009-0009-8762-9621" target="_blank" rel="noopener"><i
-                        class="fab fa-orcid"></i>ORCID</a>
-                <a href="https://github.com/tanzim-ikram" target="_blank" rel="noopener"><i
-                        class="fab fa-github"></i>GitHub</a>
-                <a href="https://www.linkedin.com/in/tanzim-ikram-sheikh/" target="_blank" rel="noopener"><i
-                        class="fab fa-linkedin"></i>LinkedIn</a>
-                <a href="mailto:tanzim.ikram@gmail.com"><i class="fas fa-envelope"></i>Email</a>
+    <header class="site-header">
+        <div class="nav-inner">
+            <a href="#top" class="nav-brand" aria-label="Back to top">
+                <span class="brand-mark" aria-hidden="true">TI</span>
+                <span class="brand-text">Tanzim Ikram</span>
+            </a>
+            <nav class="site-nav" id="site-nav" aria-label="Page sections">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#ux-casestudies">Case Studies</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#awards">Awards</a></li>
+                    <li><a href="#miscellaneous">Others</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                </button>
+                <button class="hamburger-menu" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="site-nav">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
-        </div>
-        <div class="header-image">
-            <img src="images/Tanzim_Formal_DP.png" alt="Tanzim Ikram Sheikh — profile photo">
         </div>
     </header>
 
-    <main>
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <span class="hero-eyebrow"><span class="dot" aria-hidden="true"></span> HCI Researcher &middot; Product Experience Engineer</span>
+                <h1>Tanzim Ikram <span class="accent">Sheikh</span></h1>
+                <p class="hero-tagline">CS Graduate &amp; HCI Researcher at <a href="https://www.aiub.edu/" target="_blank"
+                        rel="noopener">AIUB</a>, Bangladesh. Designing tangible, accessible, and human-centered
+                    interactive systems.</p>
+                <div class="hero-cta">
+                    <a class="btn btn-primary" href="/CV_Tanzim_Ikram_Sheikh.pdf" download><i class="fas fa-file-alt" aria-hidden="true"></i> Resume / CV</a>
+                    <a class="btn btn-ghost" href="mailto:tanzim.ikram@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i> Get in touch</a>
+                </div>
+                <div class="social-links-header">
+                    <a href="https://scholar.google.com/citations?hl=en&user=T5CuD1MAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar"><i
+                            class="fas fa-graduation-cap"></i><span>Scholar</span></a>
+                    <a href="https://orcid.org/0009-0009-8762-9621" target="_blank" rel="noopener" aria-label="ORCID"><i
+                            class="fab fa-orcid"></i><span>ORCID</span></a>
+                    <a href="https://github.com/tanzim-ikram" target="_blank" rel="noopener" aria-label="GitHub"><i
+                            class="fab fa-github"></i><span>GitHub</span></a>
+                    <a href="https://www.linkedin.com/in/tanzim-ikram-sheikh/" target="_blank" rel="noopener" aria-label="LinkedIn"><i
+                            class="fab fa-linkedin"></i><span>LinkedIn</span></a>
+                </div>
+            </div>
+            <div class="header-image">
+                <div class="photo-frame">
+                    <img src="images/Tanzim_Formal_DP.png" alt="Tanzim Ikram Sheikh — profile photo" width="320" height="320">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main id="main">
         <section id="about">
+            <h2>About</h2>
+            <div class="about-text">
             <p>
                 Hi! I am a Computer Science graduate from <a href="https://www.aiub.edu/" target="_blank"
                     rel="noopener">American International University–Bangladesh (AIUB)</a>,
@@ -88,22 +119,20 @@
                 where I design end-to-end product flows and mentor experiences for an international study advisory
                 platform.
             </p>
+            </div>
             <div class="about-stats" aria-label="Quick stats">
                 <div class="about-stat">
                     <span class="about-stat-value">3.82</span>
                     <span class="about-stat-label">CGPA / 4.00</span>
                 </div>
-                <div class="about-stat-divider"></div>
                 <div class="about-stat">
                     <span class="about-stat-value">5</span>
                     <span class="about-stat-label">Publications</span>
                 </div>
-                <div class="about-stat-divider"></div>
                 <div class="about-stat">
                     <span class="about-stat-value">7.5</span>
                     <span class="about-stat-label">IELTS Overall</span>
                 </div>
-                <div class="about-stat-divider"></div>
                 <div class="about-stat">
                     <span class="about-stat-value">2+</span>
                     <span class="about-stat-label">Years Experience</span>
@@ -284,8 +313,9 @@
                 <button id="toggle-projects" class="toggle-publications">Show All (8)</button>
             </div>
 
+            <div class="project-grid">
             <!-- Featured projects (shown by default) -->
-            <div class="misc-item" data-project-selected="1">
+            <div class="misc-item project-card" data-project-selected="1">
                 <div class="project-title-row">
                     <p><strong>AirCursor</strong></p>
                     <a href="https://github.com/tanzim-ikram/AirCursor" target="_blank" rel="noopener" class="project-github-link" aria-label="AirCursor on GitHub"><i class="fab fa-github"></i> GitHub</a>
@@ -297,7 +327,7 @@
                 </p>
             </div>
 
-            <div class="misc-item" data-project-selected="1">
+            <div class="misc-item project-card" data-project-selected="1">
                 <div class="project-title-row">
                     <p><strong>MoodDial</strong></p>
                     <a href="https://github.com/tanzim-ikram/MoodDial" target="_blank" rel="noopener" class="project-github-link" aria-label="MoodDial on GitHub"><i class="fab fa-github"></i> GitHub</a>
@@ -310,7 +340,7 @@
                 </p>
             </div>
 
-            <div class="misc-item" data-project-selected="1">
+            <div class="misc-item project-card" data-project-selected="1">
                 <div class="project-title-row">
                     <p><strong>PromptPad</strong></p>
                     <a href="https://github.com/tanzim-ikram/PromptPad" target="_blank" rel="noopener" class="project-github-link" aria-label="PromptPad on GitHub"><i class="fab fa-github"></i> GitHub</a>
@@ -324,7 +354,7 @@
             </div>
 
             <!-- Hidden projects (shown on toggle) -->
-            <div class="misc-item" data-project-selected="0" hidden>
+            <div class="misc-item project-card" data-project-selected="0" hidden>
                 <div class="project-title-row">
                     <p><strong>FigmaPad</strong></p>
                     <a href="https://github.com/tanzim-ikram/FigmaPad" target="_blank" rel="noopener" class="project-github-link" aria-label="FigmaPad on GitHub"><i class="fab fa-github"></i> GitHub</a>
@@ -336,7 +366,7 @@
                 </p>
             </div>
 
-            <div class="misc-item" data-project-selected="0" hidden>
+            <div class="misc-item project-card" data-project-selected="0" hidden>
                 <div class="project-title-row">
                     <p><strong>GyroWheel</strong></p>
                     <a href="https://github.com/tanzim-ikram/GyroWheel" target="_blank" rel="noopener" class="project-github-link" aria-label="GyroWheel on GitHub"><i class="fab fa-github"></i> GitHub</a>
@@ -348,7 +378,7 @@
                 </p>
             </div>
 
-            <div class="misc-item" data-project-selected="0" hidden>
+            <div class="misc-item project-card" data-project-selected="0" hidden>
                 <div class="project-title-row">
                     <p><strong>PulsePlay</strong></p>
                     <a href="https://github.com/tanzim-ikram/PulsePlay" target="_blank" rel="noopener" class="project-github-link" aria-label="PulsePlay on GitHub"><i class="fab fa-github"></i> GitHub</a>
@@ -360,7 +390,7 @@
                 </p>
             </div>
 
-            <div class="misc-item" data-project-selected="0" hidden>
+            <div class="misc-item project-card" data-project-selected="0" hidden>
                 <div class="project-title-row">
                     <p><strong>ShooterX</strong></p>
                     <a href="https://github.com/tanzim-ikram/ShooterX" target="_blank" rel="noopener" class="project-github-link" aria-label="ShooterX on GitHub"><i class="fab fa-github"></i> GitHub</a>
@@ -372,7 +402,7 @@
                 </p>
             </div>
 
-            <div class="misc-item" data-project-selected="0" hidden>
+            <div class="misc-item project-card" data-project-selected="0" hidden>
                 <div class="project-title-row">
                     <p><strong>TimerCube</strong></p>
                     <a href="https://github.com/tanzim-ikram/TimerCube" target="_blank" rel="noopener" class="project-github-link" aria-label="TimerCube on GitHub"><i class="fab fa-github"></i> GitHub</a>
@@ -383,6 +413,7 @@
                     breathing-LED feedback that mirrors the timer's running state, enabling screen-free,
                     low-friction time management.
                 </p>
+            </div>
             </div>
         </section>
 
@@ -614,15 +645,23 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Tanzim Ikram Sheikh. All rights reserved. &nbsp;|&nbsp; Last updated: October 2026.</p>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="mailto:tanzim.ikram@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://scholar.google.com/citations?hl=en&user=T5CuD1MAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                <a href="https://github.com/tanzim-ikram" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/tanzim-ikram-sheikh/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p>&copy; 2026 Tanzim Ikram Sheikh. All rights reserved. &nbsp;|&nbsp; Last updated: October 2026.</p>
+        </div>
     </footer>
 
     <button id="back-to-top" class="back-to-top" aria-label="Back to top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-        <i class="fas fa-arrow-up"></i>
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
     </button>
 
     <div id="imageModal" class="modal" role="dialog" aria-modal="true" aria-label="Publication thumbnail viewer">
-        <span class="modal-close" onclick="closeModal()" aria-label="Close">&times;</span>
+        <button class="modal-close" type="button" onclick="closeModal()" aria-label="Close">&times;</button>
         <img class="modal-content" id="modalImage" alt="">
     </div>
     <script src="scripts.js"></script>

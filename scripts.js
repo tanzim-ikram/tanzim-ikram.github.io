@@ -22,6 +22,9 @@ document.addEventListener('DOMContentLoaded', function () {
   // Initialize mobile menu
   initMobileMenu();
 
+  // Initialize theme toggle
+  initThemeToggle();
+
   // Initialize collapsible experience detail toggles
   initExpToggles();
 
@@ -93,24 +96,49 @@ function initSectionReveal() {
 // Initialize mobile menu toggle functionality
 function initMobileMenu() {
   const hamburger = document.querySelector('.hamburger-menu');
-  const nav = document.querySelector('.side-nav');
-  const navLinks = document.querySelectorAll('.side-nav a');
+  const nav = document.querySelector('.site-nav');
+  if (!hamburger || !nav) return;
 
-  if (hamburger && nav) {
-    hamburger.addEventListener('click', () => {
-      nav.classList.toggle('menu-open');
-      const isExpanded = nav.classList.contains('menu-open');
-      hamburger.setAttribute('aria-expanded', isExpanded);
-    });
-
-    // Close menu when a link is clicked
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('menu-open');
-        hamburger.setAttribute('aria-expanded', 'false');
-      });
-    });
+  function setOpen(open) {
+    nav.classList.toggle('menu-open', open);
+    hamburger.setAttribute('aria-expanded', open);
   }
+
+  hamburger.addEventListener('click', () => setOpen(!nav.classList.contains('menu-open')));
+
+  // Close menu when a link is clicked, on Escape, or on outside click
+  nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setOpen(false)));
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') setOpen(false);
+  });
+  document.addEventListener('click', e => {
+    if (!nav.contains(e.target) && !hamburger.contains(e.target)) setOpen(false);
+  });
+}
+
+// Light / dark theme toggle (initial theme is applied inline in <head>)
+function initThemeToggle() {
+  const btn = document.querySelector('.theme-toggle');
+  if (!btn) return;
+  const root = document.documentElement;
+  const media = window.matchMedia('(prefers-color-scheme: dark)');
+
+  const isDark = () => (root.getAttribute('data-theme') || (media.matches ? 'dark' : 'light')) === 'dark';
+
+  function syncIcon() {
+    const dark = isDark();
+    btn.innerHTML = `<i class="fas fa-${dark ? 'sun' : 'moon'}" aria-hidden="true"></i>`;
+    btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+  }
+
+  btn.addEventListener('click', () => {
+    const next = isDark() ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) { }
+    syncIcon();
+  });
+  media.addEventListener('change', syncIcon);
+  syncIcon();
 }
 
 // Initialize collapsible experience detail toggles
@@ -174,7 +202,6 @@ function loadPublications() {
       return response.json();
     })
     .then(data => {
-      console.log("Publications loaded successfully:", data);
       allPublications = data.publications;
       updatePublicationHeaderAndButton();
       renderPublications(true);
@@ -378,68 +405,40 @@ function closeModal() {
   }, 300);
 }
 
-// Close modal when clicking outside the image
-window.onclick = function (event) {
+// Close modal when clicking outside the image or pressing Escape
+window.addEventListener('click', event => {
+  if (event.target === document.getElementById('imageModal')) closeModal();
+});
+document.addEventListener('keydown', event => {
   const modal = document.getElementById('imageModal');
-  if (event.target == modal) {
-    closeModal();
-  }
-}
+  if (event.key === 'Escape' && modal && modal.classList.contains('show')) closeModal();
+});
 
-// Scrollspy and dynamic navigation effects
+// Scrollspy: highlight the current section in the nav
 function initScrollspy() {
-  const nav = document.querySelector('nav.side-nav');
-  if (!nav) return;
-
-  const sections = document.querySelectorAll('section');
-  const navLinks = document.querySelectorAll('nav.side-nav a');
+  const header = document.querySelector('.site-header');
+  const sections = document.querySelectorAll('main section');
+  const navLinks = document.querySelectorAll('.site-nav a');
+  if (!sections.length) return;
 
   function onScroll() {
-    // Show nav only when scrolled down
-    if (window.scrollY > 150) {
-      nav.classList.add('visible');
-    } else {
-      nav.classList.remove('visible');
-    }
+    if (header) header.classList.toggle('scrolled', window.scrollY > 8);
 
-    // Find current section
     let currentId = '';
-
-    // Check if we are at the bottom of the page
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
-      currentId = sections[sections.length - 1].getAttribute('id');
+      currentId = sections[sections.length - 1].id;
     } else {
       sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (window.scrollY >= sectionTop - 200) {
-          currentId = section.getAttribute('id');
-        }
+        if (window.scrollY >= section.offsetTop - 140) currentId = section.id;
       });
     }
 
-    if (!currentId && sections.length > 0) {
-      currentId = sections[0].getAttribute('id');
-    }
-
-    let foundActive = false;
     navLinks.forEach(link => {
-      link.classList.remove('active', 'past', 'future');
-
-      const href = link.getAttribute('href').substring(1);
-
-      if (href === currentId) {
-        link.classList.add('active');
-        foundActive = true;
-      } else if (!foundActive) {
-        link.classList.add('past');
-      } else {
-        link.classList.add('future');
-      }
+      link.classList.toggle('active', link.getAttribute('href') === '#' + currentId);
     });
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
-  // Call once to set initial state
   onScroll();
 }
 
