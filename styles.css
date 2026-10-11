@@ -695,7 +695,6 @@ h3 {
 .publication-item,
 .exp-item,
 .misc-item,
-.service-category,
 .ielts-card,
 .award-item,
 .about-stat {
@@ -983,8 +982,7 @@ h3 {
 
 .publication-item:hover,
 .exp-item:hover,
-.misc-item:hover,
-.service-category:hover {
+.misc-item:hover {
   border-color: var(--accent-medium);
   box-shadow: var(--shadow-md);
 }
@@ -1264,53 +1262,124 @@ h3 {
   grid-column: 1 / -1;
 }
 
-#ux-casestudies .misc-item {
-  border-top: 3px solid var(--indigo);
+.case-study {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: clamp(1.25rem, 3vw, 1.6rem);
 }
 
-#ux-casestudies .exp-title-row strong {
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  line-height: 1.35;
-}
-
-#ux-casestudies .exp-period {
-  background: none;
-  padding: 0;
-}
-
-#ux-casestudies .exp-org {
-  font-size: 0.86rem;
-  color: var(--indigo);
-}
-
-#ux-casestudies ul {
-  margin-top: 0.85rem;
-  margin-bottom: 0;
-  font-size: 0.93rem;
-}
-
-/* ─── Skills ─────────────────────────────────────────────── */
-#skills {
+.case-header {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
   gap: 1rem;
 }
 
-#skills h2 {
-  grid-column: 1 / -1;
+.case-role {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--indigo);
 }
 
-.service-category {
-  padding: 1.15rem 1.25rem;
-}
-
-.service-title {
+.case-title {
+  margin: 0.3rem 0 0;
   font-family: var(--font-display);
+  font-size: 1.15rem;
   font-weight: 700;
-  font-size: 0.95rem;
   color: var(--text-color);
-  margin-bottom: 0.75rem;
+}
+
+.case-subtitle {
+  margin: 0.15rem 0 0;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.case-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+  margin: 0;
+}
+
+.case-metric {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.15rem;
+  padding: 0.7rem 0.9rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+}
+
+.case-metric dd {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--accent-color);
+  letter-spacing: -0.02em;
+}
+
+.case-metric dt {
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+}
+
+.case-points {
+  margin: 0;
+  font-size: 0.93rem;
+}
+
+.case-tags {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-light);
+}
+
+/* ─── Skills ─────────────────────────────────────────────── */
+.skills-sheet {
+  margin: 0;
+  padding: 0.25rem clamp(1.25rem, 3vw, 1.6rem);
+}
+
+.skills-row {
+  display: grid;
+  grid-template-columns: minmax(10rem, 13rem) minmax(0, 1fr);
+  align-items: start;
+  gap: 0.5rem 1.5rem;
+  padding: 1rem 0;
+}
+
+.skills-row + .skills-row {
+  border-top: 1px solid var(--border-light);
+}
+
+.skills-row dt {
+  margin: 0;
+  padding-top: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  transition: color var(--transition-time) ease;
+}
+
+.skills-row:hover dt {
+  color: var(--accent-color);
+}
+
+.skills-row dd {
+  margin: 0;
 }
 
 .skill-tags {
@@ -1713,8 +1782,7 @@ footer {
 
 /* Tablet */
 @media (max-width: 960px) {
-  .project-grid,
-  #skills {
+  .project-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1805,8 +1873,11 @@ footer {
     background: var(--surface-color);
   }
 
-  .project-grid,
-  #skills {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-row {
     grid-template-columns: 1fr;
   }
 
