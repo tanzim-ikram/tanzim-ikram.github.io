@@ -42,7 +42,7 @@
   --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --font-display: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
 
-  --container: 1080px;
+  --container: 1240px;
   --gutter: clamp(1rem, 4vw, 2rem);
   --header-h: 64px;
   --transition-time: 0.25s;
@@ -246,20 +246,24 @@ button {
   top: 0;
   z-index: 1000;
   height: var(--header-h);
-  background: color-mix(in srgb, var(--bg-color) 78%, transparent);
-  backdrop-filter: saturate(180%) blur(14px);
-  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   border-bottom: 1px solid transparent;
-  transition: border-color var(--transition-time) ease, box-shadow var(--transition-time) ease;
+  transition: background var(--transition-time) ease, backdrop-filter var(--transition-time) ease,
+    border-color var(--transition-time) ease, box-shadow var(--transition-time) ease;
 }
 
 .site-header.scrolled {
+  background: color-mix(in srgb, var(--bg-color) 78%, transparent);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
   border-bottom-color: var(--border-color);
   box-shadow: var(--shadow-sm);
 }
 
 .nav-inner {
-  max-width: 1240px;
+  max-width: var(--container);
   height: 100%;
   margin: 0 auto;
   padding: 0 var(--gutter);
@@ -394,8 +398,7 @@ button {
 /* ─── Hero ───────────────────────────────────────────────── */
 .hero {
   position: relative;
-  overflow: hidden;
-  padding: clamp(2.5rem, 7vw, 5.5rem) var(--gutter) clamp(2.5rem, 6vw, 4.5rem);
+  padding: clamp(2.5rem, 7vw, 5.5rem) 0 clamp(2.5rem, 6vw, 4.5rem);
 }
 
 .hero::before,
@@ -429,6 +432,7 @@ button {
   z-index: 1;
   max-width: var(--container);
   margin: 0 auto;
+  padding: 0 var(--gutter);
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
@@ -624,18 +628,20 @@ h2 {
   line-height: 1.2;
   color: var(--text-color);
   margin: 0 0 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
+  position: relative;
+  display: block;
+  padding-bottom: 0.6rem;
 }
 
-h2::before {
+h2::after {
   content: '';
-  width: 6px;
-  height: 1.1em;
-  border-radius: 6px;
-  background: linear-gradient(180deg, var(--accent-color), var(--indigo));
-  flex-shrink: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 2.4rem;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent-color), var(--indigo));
 }
 
 h3 {
@@ -688,7 +694,8 @@ h3 {
 .misc-item,
 .service-category,
 .ielts-card,
-.award-item {
+.award-item,
+.about-stat {
   background: var(--surface-color);
   border: 1px solid var(--border-color);
   border-radius: var(--radius);
@@ -697,9 +704,16 @@ h3 {
 }
 
 /* ─── About ──────────────────────────────────────────────── */
+#about {
+  padding-top: clamp(2.5rem, 6vw, 4rem);
+  padding-bottom: clamp(3rem, 7vw, 4.5rem);
+}
+
 .about-text {
   font-size: 1.04rem;
   max-width: 48rem;
+  text-align: justify;
+  hyphens: auto;
 }
 
 .about-stats {
@@ -714,27 +728,12 @@ h3 {
   flex-direction: column;
   gap: 0.2rem;
   padding: 1.15rem 1.25rem;
-  background: var(--surface-color);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-sm);
-  position: relative;
-  overflow: hidden;
 }
 
-.about-stat::after {
-  content: '';
-  position: absolute;
-  inset: auto 0 0 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent-color), var(--indigo));
-  transform: scaleX(0.25);
-  transform-origin: left;
-  transition: transform 0.4s ease;
-}
-
-.about-stat:hover::after {
-  transform: scaleX(1);
+.about-stat:hover {
+  border-color: var(--accent-medium);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .about-stat-value {
