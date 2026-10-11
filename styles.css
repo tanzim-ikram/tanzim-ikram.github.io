@@ -1409,18 +1409,19 @@ h3 {
 /* ─── Awards ─────────────────────────────────────────────── */
 #awards {
   display: grid;
-  gap: 0.75rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
 }
 
 #awards h2 {
-  margin-bottom: 0.75rem;
+  grid-column: 1 / -1;
 }
 
 .award-item {
   display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem 1.25rem;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: clamp(1.15rem, 3vw, 1.4rem);
 }
 
 .award-item:hover {
@@ -1428,30 +1429,38 @@ h3 {
   box-shadow: var(--shadow-md);
 }
 
-.award-year {
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-  width: 64px;
-  height: 44px;
-  border-radius: 12px;
-  background: var(--amber-light);
-  color: var(--amber);
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 0.95rem;
+.award-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.35rem;
 }
 
-.award-desc {
-  font-weight: 500;
+.award-item .pub-award {
+  margin-top: 0;
+}
+
+.award-year {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  font-variant-numeric: tabular-nums;
+}
+
+.award-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.35;
   color: var(--text-color);
 }
 
-.award-desc small {
-  display: block;
-  font-size: 0.82rem;
-  font-weight: 400;
-  color: var(--text-tertiary);
+.award-org {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
 }
 
 /* ─── IELTS & activities ─────────────────────────────────── */
@@ -1540,39 +1549,47 @@ h3 {
   color: var(--text-color);
 }
 
-.extracurricular {
+.activity-groups {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.6rem 1rem;
+  gap: 1rem;
+  align-items: start;
 }
 
-.activity-section-title {
-  grid-column: 1 / -1;
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin: 1rem 0 0.25rem;
+.activity-group {
+  padding: 0.25rem clamp(1.15rem, 3vw, 1.4rem);
 }
 
-.activity-section-title:first-child {
-  margin-top: 0;
+.activity-group-title {
+  margin: 0;
+  padding: 1rem 0 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.activity-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .activity-item {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   grid-template-areas:
     "org time"
     "role role";
-  gap: 0.1rem 0.75rem;
-  padding: 0.8rem 1rem;
-  background: var(--surface-color);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-sm);
-  transition: border-color 0.2s ease;
+  gap: 0.15rem 1rem;
+  margin: 0;
+  padding: 0.85rem 0;
 }
 
-.activity-item:hover {
-  border-color: var(--accent-medium);
+.activity-item + .activity-item {
+  border-top: 1px solid var(--border-light);
 }
 
 .activity-org {
@@ -1580,6 +1597,11 @@ h3 {
   font-weight: 500;
   color: var(--text-color);
   font-size: 0.93rem;
+  transition: color var(--transition-time) ease;
+}
+
+.activity-item:hover .activity-org {
+  color: var(--accent-color);
 }
 
 .activity-role {
@@ -1588,16 +1610,13 @@ h3 {
   color: var(--text-secondary);
 }
 
-.activity-sep {
-  display: none;
-}
-
 .activity-timeline {
   grid-area: time;
   font-size: 0.78rem;
   font-weight: 600;
   color: var(--text-tertiary);
   white-space: nowrap;
+  font-variant-numeric: tabular-nums;
 }
 
 /* ─── Footer ─────────────────────────────────────────────── */
@@ -1782,7 +1801,8 @@ footer {
 
 /* Tablet */
 @media (max-width: 960px) {
-  .project-grid {
+  .project-grid,
+  #awards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1841,7 +1861,7 @@ footer {
   }
 
   #ux-casestudies,
-  .extracurricular {
+  .activity-groups {
     grid-template-columns: 1fr;
   }
 }
@@ -1850,6 +1870,14 @@ footer {
 @media (max-width: 560px) {
   body {
     font-size: 0.96rem;
+  }
+
+  .activity-item {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "org"
+      "role"
+      "time";
   }
 
   .brand-text {
@@ -1923,8 +1951,8 @@ footer {
     padding: 1rem;
   }
 
-  .award-item {
-    align-items: flex-start;
+  #awards {
+    grid-template-columns: 1fr;
   }
 
   .footer-inner {
