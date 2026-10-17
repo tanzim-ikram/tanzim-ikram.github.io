@@ -1,6 +1,22 @@
 {
   "publications": [
     {
+      "title": "Investigating the Adoption Intention of AI-IoT Enabled Vertical Farming in the Lens of Theory of Reasoned Goal Pursuit",
+      "authors": [
+        "M. H. Nahid",
+        "K. T. Islam",
+        "T. I. Sheikh",
+        "S. A. Ryhan"
+      ],
+      "venue": "MCT4SD 2026, Lecture Notes in Networks and Systems (LNNS), 2026",
+      "thumbnail": "images/publications/VerticalFarming.png",
+      "selected": 1,
+      "award": "Accepted — Awaiting Publication",
+      "links": {
+        "pdf": "https://drive.google.com/file/d/1rBQVX48pqTUiJzckCjVN9NWUZbqICspF/view?usp=sharing"
+      }
+    },
+    {
       "title": "Integrating Therapy and Technology: An Exploratory Case Study on the Development of Aids for Dementia in Bangladesh",
       "authors": [
         "T. I. Sheikh",
@@ -54,6 +70,25 @@
       }
     },
     {
+      "title": "Melanoma Detection Using Augmented ResNet34 for High-Precision Dermoscopic Image Classification",
+      "authors": [
+        "M. Ahmed",
+        "A. Sultana",
+        "P. B. Pew",
+        "S. Datto",
+        "T. I. Sheikh",
+        "K. Redwan",
+        "M. F. A. Al Sohan"
+      ],
+      "venue": "ICCIES 2025, Communications in Computer and Information Science (CCIS), 2584, 2026",
+      "thumbnail": "images/publications/Melanoma.jpg",
+      "selected": 0,
+      "award": "",
+      "links": {
+        "doi": "https://doi.org/10.1007/978-3-031-98161-6_8"
+      }
+    },
+    {
       "title": "GlobeStick: Innovating Map Navigation Through Tactile Interaction and User-Centered Design",
       "authors": [
         "K. Redwan",
@@ -69,25 +104,6 @@
       "award": "",
       "links": {
         "doi": "https://doi.org/10.1007/978-3-031-93233-5_16"
-      }
-    },
-    {
-      "title": "Melanoma Detection Using Augmented ResNet34 for High-Precision Dermoscopic Image Classification",
-      "authors": [
-        "M. Ahmed",
-        "A. Sultana",
-        "P. B. Pew",
-        "S. Datto",
-        "T. I. Sheikh",
-        "K. Redwan",
-        "M. F. A. Al Sohan"
-      ],
-      "venue": "ICCIES 2025, Lecture Notes in Networks and Systems (LNNS), 2025",
-      "thumbnail": "images/publications/Melanoma.jpg",
-      "selected": 0,
-      "award": "",
-      "links": {
-        "doi": "https://doi.org/10.1007/978-3-031-98161-6_8"
       }
     }
   ]
