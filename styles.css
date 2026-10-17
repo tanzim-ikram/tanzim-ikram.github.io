@@ -466,6 +466,8 @@ section.visible {
 }
 
 .pub-title {
+  flex: 1 1 auto;
+  min-width: 140px;
   font-weight: 500;
   font-size: 0.95rem;
   line-height: 1.55;
@@ -535,6 +537,7 @@ section.visible {
 }
 
 .pub-award {
+  flex-shrink: 0;
   font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.02em;
