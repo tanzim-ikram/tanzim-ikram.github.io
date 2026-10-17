@@ -1030,6 +1030,8 @@ h3 {
 }
 
 .pub-title {
+  flex: 1 1 auto;
+  min-width: 140px;
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.05rem;
@@ -1088,6 +1090,7 @@ h3 {
 
 .pub-award {
   display: inline-flex;
+  flex-shrink: 0;
   align-self: flex-start;
   align-items: center;
   gap: 0.4rem;
