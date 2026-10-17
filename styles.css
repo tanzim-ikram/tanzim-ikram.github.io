@@ -1022,6 +1022,13 @@ h3 {
   min-width: 0;
 }
 
+.pub-title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+}
+
 .pub-title {
   font-family: var(--font-display);
   font-weight: 700;
