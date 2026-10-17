@@ -249,11 +249,23 @@ function createPublicationElement(publication) {
   const content = document.createElement('div');
   content.className = 'pub-content';
 
-  // Add title
+  // Add title row (title + award/status badge, if present)
+  const titleRow = document.createElement('div');
+  titleRow.className = 'pub-title-row';
+
   const title = document.createElement('div');
   title.className = 'pub-title';
   title.textContent = publication.title;
-  content.appendChild(title);
+  titleRow.appendChild(title);
+
+  if (publication.award && publication.award.length > 0) {
+    const award = document.createElement('div');
+    award.className = 'pub-award';
+    award.textContent = publication.award;
+    titleRow.appendChild(award);
+  }
+
+  content.appendChild(titleRow);
 
   // Add authors with highlight
   const authors = document.createElement('div');
@@ -276,7 +288,7 @@ function createPublicationElement(publication) {
   authors.innerHTML = authorsHTML;
   content.appendChild(authors);
 
-  // Add venue with award if present
+  // Add venue, with any links (DOI, PDF, code, project) inline next to it
   const venueContainer = document.createElement('div');
   venueContainer.className = 'pub-venue-container';
 
@@ -288,69 +300,32 @@ function createPublicationElement(publication) {
   venue.textContent = publication.venue;
   venueWrapper.appendChild(venue);
 
-  // Add DOI inline next to venue
-  if (publication.links && publication.links.doi) {
+  const inlineLinks = [
+    { key: 'doi', icon: 'fa-link', label: 'DOI' },
+    { key: 'pdf', icon: 'fa-file-pdf', label: 'PDF' },
+    { key: 'code', icon: 'fa-code', label: 'Code' },
+    { key: 'project', icon: 'fa-arrow-up-right-from-square', label: 'Project Page' }
+  ];
+
+  inlineLinks.forEach(({ key, icon, label }) => {
+    if (!publication.links || !publication.links[key]) return;
+
     const sep = document.createElement('span');
     sep.className = 'pub-venue-sep';
     sep.textContent = '·';
     venueWrapper.appendChild(sep);
 
-    const doiLink = document.createElement('a');
-    doiLink.href = publication.links.doi;
-    doiLink.target = '_blank';
-    doiLink.rel = 'noopener';
-    doiLink.className = 'pub-doi-link';
-    doiLink.innerHTML = '<i class="fas fa-link" aria-hidden="true"></i> DOI';
-    venueWrapper.appendChild(doiLink);
-  }
+    const link = document.createElement('a');
+    link.href = publication.links[key];
+    link.target = '_blank';
+    link.rel = 'noopener';
+    link.className = 'pub-doi-link';
+    link.innerHTML = `<i class="fas ${icon}" aria-hidden="true"></i> ${label}`;
+    venueWrapper.appendChild(link);
+  });
 
   venueContainer.appendChild(venueWrapper);
-
-  // Add award if it exists
-  if (publication.award && publication.award.length > 0) {
-    const award = document.createElement('div');
-    award.className = 'pub-award';
-    award.textContent = publication.award;
-    venueContainer.appendChild(award);
-  }
-
   content.appendChild(venueContainer);
-
-  // Add other links (pdf, code, project) if they exist
-  const hasExtraLinks = publication.links && (publication.links.pdf || publication.links.code || publication.links.project);
-  if (hasExtraLinks) {
-    const links = document.createElement('div');
-    links.className = 'pub-links';
-
-    if (publication.links.pdf) {
-      const pdfLink = document.createElement('a');
-      pdfLink.href = publication.links.pdf;
-      pdfLink.target = '_blank';
-      pdfLink.rel = 'noopener';
-      pdfLink.textContent = '[PDF]';
-      links.appendChild(pdfLink);
-    }
-
-    if (publication.links.code) {
-      const codeLink = document.createElement('a');
-      codeLink.href = publication.links.code;
-      codeLink.target = '_blank';
-      codeLink.rel = 'noopener';
-      codeLink.textContent = '[Code]';
-      links.appendChild(codeLink);
-    }
-
-    if (publication.links.project) {
-      const projectLink = document.createElement('a');
-      projectLink.href = publication.links.project;
-      projectLink.target = '_blank';
-      projectLink.rel = 'noopener';
-      projectLink.textContent = '[Project Page]';
-      links.appendChild(projectLink);
-    }
-
-    content.appendChild(links);
-  }
 
   // Assemble the publication item
   pubItem.appendChild(thumbnail);

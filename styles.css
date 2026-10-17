@@ -456,9 +456,16 @@ section.visible {
   justify-content: center;
 }
 
+.pub-title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.35rem;
+}
+
 .pub-title {
   font-weight: 500;
-  margin-bottom: 0.35rem;
   font-size: 0.95rem;
   line-height: 1.55;
   color: var(--text-color);
