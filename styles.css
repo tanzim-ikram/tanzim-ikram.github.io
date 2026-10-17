@@ -1030,7 +1030,7 @@ h3 {
 }
 
 .pub-title {
-  flex: 1 1 auto;
+  flex: 1 1 0%;
   min-width: 140px;
   font-family: var(--font-display);
   font-weight: 700;
